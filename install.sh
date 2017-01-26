@@ -1,4 +1,4 @@
-# install apache
+install apache
 apt -y install apache2
 apt -y install libapache2-mod-php7.0
 a2enmod rewrite
@@ -24,8 +24,8 @@ npm install gulp-cli -g
 npm install gulp -D
 
 # set rights to /var/www
-adduser $USER www-data
-chown $USER:www-data -R /var/www
+adduser $SUDO_USER www-data
+chown $SUDO_USER:www-data -R /var/www
 chmod 775 -R /var/www
 
 # set apache conf for localhost
