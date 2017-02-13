@@ -23,6 +23,23 @@ apt -y install php7.0-bcmath php7.0-fpm php7.0-mcrypt php7.0-bz2 php7.0-gd php7.
 npm install gulp-cli -g
 npm install gulp -D
 
+# install pixiu cli
+wget https://bootstrap.pypa.io/get-pip.py
+wget https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py
+
+python3 get-pip.py
+pip install virtualenv
+python3 get-pipsi.py
+
+rm *.py
+
+cd ..
+git clone git@github.com:pixiucz/cli.git
+sudo -u $SUDO_USER sh -c "pipsi install --editable cli"
+# rm -rf cli
+# pipsi upgrade --editable cli
+cd dev-setup
+
 # set rights to /var/www
 adduser $SUDO_USER www-data
 chown $SUDO_USER:www-data -R /var/www
